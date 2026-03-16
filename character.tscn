@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://h3cctr7360oe"]
+
+[ext_resource type="Script" uid="uid://b2cxbwkrs2doj" path="res://character.gd" id="1_glpr6"]
+
+[sub_resource type="Gradient" id="Gradient_vu45j"]
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_glpr6"]
+gradient = SubResource("Gradient_vu45j")
+width = 20
+height = 20
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pjt0s"]
+
+[node name="Character" type="CharacterBody2D" unique_id=2006792599]
+scale = Vector2(3.4412773, 7.210826)
+script = ExtResource("1_glpr6")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=626142479]
+texture = SubResource("GradientTexture2D_glpr6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=366014608]
+shape = SubResource("RectangleShape2D_pjt0s")
