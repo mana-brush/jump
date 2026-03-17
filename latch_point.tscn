@@ -21,7 +21,7 @@ position = Vector2(-0.5, -10)
 shape = SubResource("RectangleShape2D_xrk45")
 
 [node name="SnapPoint" type="Marker2D" parent="." unique_id=1380502896]
-position = Vector2(0, -20)
+position = Vector2(0, -26)
 
 [node name="LatchArea" type="Area2D" parent="." unique_id=1100093621]
 
