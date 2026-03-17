@@ -13,8 +13,11 @@ height = 20
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pjt0s"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_glpr6"]
+size = Vector2(4.7693844, 20)
+
 [node name="Character" type="CharacterBody2D" unique_id=2006792599]
-scale = Vector2(3.4412773, 7.210826)
+scale = Vector2(3.4412773, 3.4908247)
 script = ExtResource("1_glpr6")
 metadata/_edit_group_ = true
 
@@ -23,3 +26,9 @@ texture = SubResource("GradientTexture2D_glpr6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=366014608]
 shape = SubResource("RectangleShape2D_pjt0s")
+
+[node name="Reach" type="Area2D" parent="." unique_id=1871882527]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Reach" unique_id=174960965]
+position = Vector2(12.264745, 0)
+shape = SubResource("RectangleShape2D_glpr6")

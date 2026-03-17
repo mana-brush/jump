@@ -1,41 +1,41 @@
 [gd_scene format=3 uid="uid://bskowdyn8q6f6"]
 
 [ext_resource type="PackedScene" uid="uid://h3cctr7360oe" path="res://character.tscn" id="1_0xm2m"]
-[ext_resource type="PackedScene" uid="uid://dmgb1n7216nre" path="res://spike.tscn" id="2_h2yge"]
+[ext_resource type="PackedScene" uid="uid://b6dib8pagbtbc" path="res://latch_point.tscn" id="2_0xm2m"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1bvp3"]
-size = Vector2(535, 197)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0xm2m"]
+size = Vector2(532, 58)
 
 [sub_resource type="QuadMesh" id="QuadMesh_lquwl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1bvp3"]
+size = Vector2(339, 58)
 
 [node name="Main" type="Node" unique_id=55350481]
 
 [node name="LeftPlatform" type="StaticBody2D" parent="." unique_id=2024104354]
+position = Vector2(268, 687)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LeftPlatform" unique_id=1032668638]
-position = Vector2(271.5, 618.5)
-shape = SubResource("RectangleShape2D_1bvp3")
+shape = SubResource("RectangleShape2D_0xm2m")
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="LeftPlatform" unique_id=855984010]
-position = Vector2(271.49997, 619)
-scale = Vector2(535, 196.00003)
+scale = Vector2(535, 59.000004)
 mesh = SubResource("QuadMesh_lquwl")
 
 [node name="Character" parent="." unique_id=2006792599 instance=ExtResource("1_0xm2m")]
-position = Vector2(269, 446)
-
-[node name="Spike" parent="." unique_id=1783989011 instance=ExtResource("2_h2yge")]
-position = Vector2(647, 716)
-scale = Vector2(3.4412773, 7.210826)
+position = Vector2(269, 622)
 
 [node name="RightPlatform" type="StaticBody2D" parent="." unique_id=1110180670]
-position = Vector2(741, -1)
+position = Vector2(1107, 687)
+metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RightPlatform" unique_id=1780794495]
-position = Vector2(271.5, 618.5)
 shape = SubResource("RectangleShape2D_1bvp3")
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="RightPlatform" unique_id=540491617]
-position = Vector2(271.49997, 619)
-scale = Vector2(535, 196.00003)
+scale = Vector2(343, 58.000027)
 mesh = SubResource("QuadMesh_lquwl")
+
+[node name="LatchPoint" parent="." unique_id=2051732560 instance=ExtResource("2_0xm2m")]
+position = Vector2(743, 658)
