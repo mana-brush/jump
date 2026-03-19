@@ -26,6 +26,9 @@ mesh = SubResource("QuadMesh_lquwl")
 [node name="Character" parent="." unique_id=2006792599 instance=ExtResource("1_0xm2m")]
 position = Vector2(269, 622)
 
+[node name="LatchPoint" parent="." unique_id=2051732560 instance=ExtResource("2_0xm2m")]
+position = Vector2(729, 648)
+
 [node name="RightPlatform" type="StaticBody2D" parent="." unique_id=1110180670]
 position = Vector2(1107, 687)
 metadata/_edit_group_ = true
@@ -36,6 +39,3 @@ shape = SubResource("RectangleShape2D_1bvp3")
 [node name="MeshInstance2D" type="MeshInstance2D" parent="RightPlatform" unique_id=540491617]
 scale = Vector2(343, 58.000027)
 mesh = SubResource("QuadMesh_lquwl")
-
-[node name="LatchPoint" parent="." unique_id=2051732560 instance=ExtResource("2_0xm2m")]
-position = Vector2(743, 658)

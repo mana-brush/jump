@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://b62ykxjtc2q32"]
+
+[ext_resource type="PackedScene" uid="uid://h3cctr7360oe" path="res://character.tscn" id="1_nmjpi"]
+[ext_resource type="PackedScene" uid="uid://b6dib8pagbtbc" path="res://latch_point.tscn" id="2_xdadj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1y8me"]
+size = Vector2(126, 58)
+
+[sub_resource type="QuadMesh" id="QuadMesh_n7ypv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0s5r2"]
+size = Vector2(161, 58)
+
+[sub_resource type="QuadMesh" id="QuadMesh_7j8ne"]
+
+[node name="Node2D" type="Node2D" unique_id=214919880]
+
+[node name="LeftPlatform" type="StaticBody2D" parent="." unique_id=1744224528]
+position = Vector2(268, 687)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftPlatform" unique_id=1229638570]
+position = Vector2(-168, 0)
+shape = SubResource("RectangleShape2D_1y8me")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="LeftPlatform" unique_id=2103957879]
+position = Vector2(-169.75, 0)
+scale = Vector2(195.5, 59.000004)
+mesh = SubResource("QuadMesh_n7ypv")
+
+[node name="MiddlePlatform" type="StaticBody2D" parent="." unique_id=37648658]
+position = Vector2(953, 687)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MiddlePlatform" unique_id=202028858]
+position = Vector2(-203, 0)
+shape = SubResource("RectangleShape2D_1y8me")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="MiddlePlatform" unique_id=1273045552]
+position = Vector2(-204.24998, 0)
+scale = Vector2(126.50002, 59.000004)
+mesh = SubResource("QuadMesh_n7ypv")
+
+[node name="LeftPlatform2" type="StaticBody2D" parent="." unique_id=78425180]
+position = Vector2(1020, 694)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftPlatform2" unique_id=2019239566]
+position = Vector2(185.5, 0)
+shape = SubResource("RectangleShape2D_0s5r2")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="LeftPlatform2" unique_id=51485525]
+position = Vector2(186.24998, 0)
+scale = Vector2(162.50002, 59.000004)
+mesh = SubResource("QuadMesh_7j8ne")
+
+[node name="Character" parent="." unique_id=2006792599 instance=ExtResource("1_nmjpi")]
+position = Vector2(94, 621)
+
+[node name="LatchPoint" parent="." unique_id=2051732560 instance=ExtResource("2_xdadj")]
+position = Vector2(381, 694)
+
+[node name="LatchPoint2" parent="." unique_id=1756505225 instance=ExtResource("2_xdadj")]
+position = Vector2(548, 694)
+
+[node name="LatchPoint3" parent="." unique_id=228638345 instance=ExtResource("2_xdadj")]
+position = Vector2(979, 694)
