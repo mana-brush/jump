@@ -1,6 +1,5 @@
 extends CharacterBody2D
 
-
 # --- TUNING ---
 const SPEED = 200.0
 const JUMP_VELOCITY = -400.0
@@ -20,14 +19,16 @@ var state = State.NORMAL
 # Current latch target
 var current_latch_point: Node2D = null
 
+var nearby_interactable = null
 
 func _physics_process(delta):
 
-	match state:
+	if nearby_interactable:
+		print("Near %s" % nearby_interactable.name);
 
+	match state:
 		State.NORMAL:
 			handle_movement(delta)
-
 			if current_latch_point and Input.is_action_just_pressed("latch"):
 				latch_to_point(delta)
 		State.LATCHING:
@@ -97,3 +98,14 @@ func set_latch_point(point):
 func clear_latch_point(point):
 	if current_latch_point == point:
 		current_latch_point = null
+
+func set_interactable(obj):
+	nearby_interactable = obj
+	
+func clear_interactable(obj):
+	if nearby_interactable == obj:
+		nearby_interactable = null
+
+
+func _on_reset_barrier_body_entered(body: Node2D) -> void:
+	global_position = $ResetPoint.position

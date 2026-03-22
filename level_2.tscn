@@ -4,9 +4,12 @@
 [ext_resource type="PackedScene" uid="uid://b6dib8pagbtbc" path="res://latch_point.tscn" id="2_xdadj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1y8me"]
-size = Vector2(126, 58)
+size = Vector2(196, 58)
 
 [sub_resource type="QuadMesh" id="QuadMesh_n7ypv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xdadj"]
+size = Vector2(126, 58)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0s5r2"]
 size = Vector2(161, 58)
@@ -19,7 +22,7 @@ size = Vector2(161, 58)
 position = Vector2(268, 687)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LeftPlatform" unique_id=1229638570]
-position = Vector2(-168, 0)
+position = Vector2(-170, 0)
 shape = SubResource("RectangleShape2D_1y8me")
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="LeftPlatform" unique_id=2103957879]
@@ -32,7 +35,7 @@ position = Vector2(953, 687)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MiddlePlatform" unique_id=202028858]
 position = Vector2(-203, 0)
-shape = SubResource("RectangleShape2D_1y8me")
+shape = SubResource("RectangleShape2D_xdadj")
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="MiddlePlatform" unique_id=1273045552]
 position = Vector2(-204.24998, 0)

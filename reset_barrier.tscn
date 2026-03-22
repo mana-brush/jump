@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://doepcrcwrinty"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8xpx0"]
+size = Vector2(1301, 20)
+
+[node name="ResetBarrier" type="Area2D" unique_id=1941922915]
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2026063151]
+position = Vector2(640.5, 0)
+shape = SubResource("RectangleShape2D_8xpx0")

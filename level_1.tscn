@@ -1,7 +1,8 @@
-[gd_scene format=3 uid="uid://bskowdyn8q6f6"]
+[gd_scene format=3 uid="uid://p5e6w5smmu0k"]
 
-[ext_resource type="PackedScene" uid="uid://h3cctr7360oe" path="res://character.tscn" id="1_0xm2m"]
-[ext_resource type="PackedScene" uid="uid://b6dib8pagbtbc" path="res://latch_point.tscn" id="2_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://h3cctr7360oe" path="res://character.tscn" id="1_hbghi"]
+[ext_resource type="PackedScene" uid="uid://b6dib8pagbtbc" path="res://latch_point.tscn" id="2_hn12h"]
+[ext_resource type="PackedScene" uid="uid://doepcrcwrinty" path="res://reset_barrier.tscn" id="3_hn12h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0xm2m"]
 size = Vector2(532, 58)
@@ -11,7 +12,7 @@ size = Vector2(532, 58)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1bvp3"]
 size = Vector2(339, 58)
 
-[node name="Main" type="Node" unique_id=55350481]
+[node name="level_1" type="Node" unique_id=55350481]
 
 [node name="LeftPlatform" type="StaticBody2D" parent="." unique_id=2024104354]
 position = Vector2(268, 687)
@@ -23,10 +24,10 @@ shape = SubResource("RectangleShape2D_0xm2m")
 scale = Vector2(535, 59.000004)
 mesh = SubResource("QuadMesh_lquwl")
 
-[node name="Character" parent="." unique_id=2006792599 instance=ExtResource("1_0xm2m")]
+[node name="Character" parent="." unique_id=2006792599 instance=ExtResource("1_hbghi")]
 position = Vector2(269, 622)
 
-[node name="LatchPoint" parent="." unique_id=2051732560 instance=ExtResource("2_0xm2m")]
+[node name="LatchPoint" parent="." unique_id=2051732560 instance=ExtResource("2_hn12h")]
 position = Vector2(729, 648)
 
 [node name="RightPlatform" type="StaticBody2D" parent="." unique_id=1110180670]
@@ -39,3 +40,11 @@ shape = SubResource("RectangleShape2D_1bvp3")
 [node name="MeshInstance2D" type="MeshInstance2D" parent="RightPlatform" unique_id=540491617]
 scale = Vector2(343, 58.000027)
 mesh = SubResource("QuadMesh_lquwl")
+
+[node name="ResetBarrier" parent="." unique_id=1941922915 instance=ExtResource("3_hn12h")]
+position = Vector2(0, 792)
+
+[node name="ResetPoint" type="Node2D" parent="." unique_id=1166359789]
+position = Vector2(276, 519)
+
+[connection signal="body_entered" from="ResetBarrier" to="Character" method="_on_reset_barrier_body_entered"]
