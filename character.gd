@@ -15,6 +15,7 @@ enum State {
 }
 
 var state = State.NORMAL
+var current_checkpoint: Node2D
 
 # Current latch target
 var current_latch_point: Node2D = null
@@ -106,6 +107,16 @@ func clear_interactable(obj):
 	if nearby_interactable == obj:
 		nearby_interactable = null
 
-
-func _on_reset_barrier_body_entered(body: Node2D) -> void:
-	global_position = $ResetPoint.position
+func set_checkpoint(point: Node2D):
+	
+	# only set if new checkpoint
+	if (current_checkpoint and current_checkpoint.name == point.name):
+		return
+		
+	current_checkpoint = point
+	print("Checkpoint set:", point.name)
+	
+func respawn():
+	if current_checkpoint:
+		global_position = current_checkpoint.global_position
+		velocity = Vector2.ZERO

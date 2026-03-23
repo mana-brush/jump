@@ -1,8 +1,20 @@
-[gd_scene format=3 uid="uid://p5e6w5smmu0k"]
+[gd_scene format=4 uid="uid://p5e6w5smmu0k"]
 
 [ext_resource type="PackedScene" uid="uid://h3cctr7360oe" path="res://character.tscn" id="1_hbghi"]
+[ext_resource type="Texture2D" uid="uid://qgaerulc7t1v" path="res://art/highlight-lines.png" id="1_rka8t"]
 [ext_resource type="PackedScene" uid="uid://b6dib8pagbtbc" path="res://latch_point.tscn" id="2_hn12h"]
-[ext_resource type="PackedScene" uid="uid://doepcrcwrinty" path="res://reset_barrier.tscn" id="3_hn12h"]
+[ext_resource type="PackedScene" uid="uid://l3604jr0ryq6" path="res://hazard.tscn" id="3_ihfcg"]
+[ext_resource type="PackedScene" uid="uid://cl6d8en16keqa" path="res://respawn_point.tscn" id="4_rka8t"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5hph3"]
+texture = ExtResource("1_rka8t")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_gyffv"]
+tile_size = Vector2i(32, 32)
+sources/4 = SubResource("TileSetAtlasSource_5hph3")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0xm2m"]
 size = Vector2(532, 58)
@@ -14,8 +26,14 @@ size = Vector2(339, 58)
 
 [node name="level_1" type="Node" unique_id=55350481]
 
+[node name="Layer_Holder" type="Node2D" parent="." unique_id=572142870]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="Layer_Holder" unique_id=1746746865]
+tile_map_data = PackedByteArray("AAAdABYABAAAAAAAAAAcABYABAAAAAAAAAAbABYABAAAAAAAAAAaABYABAAAAAAAAAAZABYABAAAAAAAAAAYABYABAAAAAAAAAAXABYABAAAAAAAAAAWABYABAAAAAAAAAAVABYABAAAAAAAAAAUABYABAAAAAAAAAATABYABAAAAAAAAAASABYABAAAAAAAAAARABYABAAAAAAAAAAQABYABAAAAAAAAAAQABcABAAAAAAAAAARABcABAAAAAAAAAASABcABAAAAAAAAAATABcABAAAAAAAAAAUABcABAAAAAAAAAAVABcABAAAAAAAAAAWABcABAAAAAAAAAAXABcABAAAAAAAAAAYABcABAAAAAAAAAAZABcABAAAAAAAAAAaABcABAAAAAAAAAAbABcABAAAAAAAAAAcABcABAAAAAAAAAAdABUABAAAAAAAAAAcABUABAAAAAAAAAAbABUABAAAAAAAAAAaABUABAAAAAAAAAAZABUABAAAAAAAAAAYABUABAAAAAAAAAAXABUABAAAAAAAAAAWABUABAAAAAAAAAAVABUABAAAAAAAAAAUABUABAAAAAAAAAATABUABAAAAAAAAAASABUABAAAAAAAAAARABUABAAAAAAAAAAQABUABAAAAAAAAAAjABQABAABAAAAAAAkABQABAABAAAAAAAlABQABAABAAAAAAAlABMABAABAAAAAAAkABMABAABAAAAAAAjABMABAABAAAAAAAjABIABAABAAAAAAAkABIABAABAAAAAAAlABIABAABAAAAAAAlABEABAABAAAAAAAkABEABAABAAAAAAAjABEABAABAAAAAAAPABUABAAAAAAAAAAOABUABAAAAAAAAAANABUABAAAAAAAAAAMABUABAAAAAAAAAALABUABAAAAAAAAAAKABUABAAAAAAAAAAJABUABAAAAAAAAAAIABUABAAAAAAAAAAHABUABAAAAAAAAAAGABUABAAAAAAAAAAFABUABAAAAAAAAAAEABUABAAAAAAAAAADABUABAAAAAAAAAACABUABAAAAAAAAAABABUABAAAAAAAAAAAABUABAAAAAAAAAD//xUABAAAAAAAAAD+/xUABAAAAAAAAAD+/xYABAAAAAAAAAD+/xcABAAAAAAAAAD//xcABAAAAAAAAAD//xYABAAAAAAAAAAAABYABAAAAAAAAAABABYABAAAAAAAAAABABcABAAAAAAAAAAAABcABAAAAAAAAAACABcABAAAAAAAAAADABcABAAAAAAAAAAEABcABAAAAAAAAAAEABYABAAAAAAAAAADABYABAAAAAAAAAACABYABAAAAAAAAAAFABYABAAAAAAAAAAGABYABAAAAAAAAAAHABYABAAAAAAAAAAIABYABAAAAAAAAAAJABYABAAAAAAAAAAKABYABAAAAAAAAAALABYABAAAAAAAAAAMABYABAAAAAAAAAANABYABAAAAAAAAAAOABYABAAAAAAAAAAPABYABAAAAAAAAAAPABcABAAAAAAAAAAOABcABAAAAAAAAAANABcABAAAAAAAAAAMABcABAAAAAAAAAALABcABAAAAAAAAAAKABcABAAAAAAAAAAJABcABAAAAAAAAAAIABcABAAAAAAAAAAHABcABAAAAAAAAAAGABcABAAAAAAAAAAFABcABAAAAAAAAAAeABUABAAAAAAAAAAfABUABAAAAAAAAAAgABUABAAAAAAAAAAhABUABAAAAAAAAAAiABUABAAAAAAAAAAjABUABAAAAAAAAAAkABUABAAAAAAAAAAlABUABAAAAAAAAAAmABUABAAAAAAAAAAnABUABAAAAAAAAAAoABUABAAAAAAAAAAoABYABAAAAAAAAAAnABYABAAAAAAAAAAmABYABAAAAAAAAAAlABYABAAAAAAAAAAkABYABAAAAAAAAAAjABYABAAAAAAAAAAiABYABAAAAAAAAAAhABYABAAAAAAAAAAgABYABAAAAAAAAAAfABYABAAAAAAAAAAeABYABAAAAAAAAAAdABcABAAAAAAAAAAeABcABAAAAAAAAAAfABcABAAAAAAAAAAgABcABAAAAAAAAAAhABcABAAAAAAAAAAiABcABAAAAAAAAAAjABcABAAAAAAAAAAkABcABAAAAAAAAAAlABcABAAAAAAAAAAmABcABAAAAAAAAAAnABcABAAAAAAAAAAoABcABAAAAAAAAAApABcABAAAAAAAAAApABYABAAAAAAAAAApABUABAAAAAAAAAA=")
+tile_set = SubResource("TileSet_gyffv")
+
 [node name="LeftPlatform" type="StaticBody2D" parent="." unique_id=2024104354]
-position = Vector2(268, 687)
+position = Vector2(268, 691)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LeftPlatform" unique_id=1032668638]
 shape = SubResource("RectangleShape2D_0xm2m")
@@ -31,7 +49,7 @@ position = Vector2(269, 622)
 position = Vector2(729, 648)
 
 [node name="RightPlatform" type="StaticBody2D" parent="." unique_id=1110180670]
-position = Vector2(1107, 687)
+position = Vector2(1107, 691)
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RightPlatform" unique_id=1780794495]
@@ -41,10 +59,13 @@ shape = SubResource("RectangleShape2D_1bvp3")
 scale = Vector2(343, 58.000027)
 mesh = SubResource("QuadMesh_lquwl")
 
-[node name="ResetBarrier" parent="." unique_id=1941922915 instance=ExtResource("3_hn12h")]
-position = Vector2(0, 792)
+[node name="Hazard" parent="." unique_id=1941922915 instance=ExtResource("3_ihfcg")]
+position = Vector2(-544, 756)
 
-[node name="ResetPoint" type="Node2D" parent="." unique_id=1166359789]
-position = Vector2(276, 519)
+[node name="RespawnPoint" parent="." unique_id=1839479743 instance=ExtResource("4_rka8t")]
+position = Vector2(231, 645)
 
-[connection signal="body_entered" from="ResetBarrier" to="Character" method="_on_reset_barrier_body_entered"]
+[node name="RespawnPoint2" parent="." unique_id=268190703 instance=ExtResource("4_rka8t")]
+position = Vector2(1168, 643)
+
+[connection signal="body_entered" from="Hazard" to="Hazard" method="_on_body_entered"]
