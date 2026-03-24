@@ -118,5 +118,7 @@ func set_checkpoint(point: Node2D):
 	
 func respawn():
 	if current_checkpoint:
+		state = State.NORMAL
+		current_latch_point = null
 		global_position = current_checkpoint.global_position
 		velocity = Vector2.ZERO

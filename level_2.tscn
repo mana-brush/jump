@@ -5,9 +5,9 @@
 [ext_resource type="Script" uid="uid://b3wta2fa0ogdo" path="res://path_follow_2d.gd" id="2_0s5r2"]
 [ext_resource type="PackedScene" uid="uid://b6dib8pagbtbc" path="res://latch_point.tscn" id="2_xdadj"]
 [ext_resource type="PackedScene" uid="uid://cl6d8en16keqa" path="res://respawn_point.tscn" id="3_1y8me"]
-[ext_resource type="PackedScene" uid="uid://doepcrcwrinty" path="res://reset_barrier.tscn" id="4_n7ypv"]
+[ext_resource type="PackedScene" uid="uid://l3604jr0ryq6" path="res://hazard.tscn" id="6_0s5r2"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0s5r2"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7j8ne"]
 texture = ExtResource("1_n7ypv")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
@@ -15,7 +15,7 @@ texture_region_size = Vector2i(32, 32)
 
 [sub_resource type="TileSet" id="TileSet_7j8ne"]
 tile_size = Vector2i(32, 32)
-sources/0 = SubResource("TileSetAtlasSource_0s5r2")
+sources/0 = SubResource("TileSetAtlasSource_7j8ne")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1y8me"]
 size = Vector2(196, 58)
@@ -106,5 +106,7 @@ position = Vector2(98, 648)
 [node name="RespawnPoint2" parent="." unique_id=1462440249 instance=ExtResource("3_1y8me")]
 position = Vector2(752, 648)
 
-[node name="Hazard" parent="." unique_id=1941922915 instance=ExtResource("4_n7ypv")]
-position = Vector2(780, 797)
+[node name="Hazard" parent="." unique_id=1941922915 instance=ExtResource("6_0s5r2")]
+position = Vector2(-629, 791)
+
+[connection signal="body_entered" from="Hazard" to="Hazard" method="_on_body_entered"]

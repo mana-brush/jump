@@ -1,0 +1,116 @@
+[gd_scene format=4 uid="uid://uili2uk0nipx"]
+
+[ext_resource type="Texture2D" uid="uid://qgaerulc7t1v" path="res://art/highlight-lines.png" id="1_l45re"]
+[ext_resource type="PackedScene" uid="uid://b6dib8pagbtbc" path="res://latch_point.tscn" id="2_c8stx"]
+[ext_resource type="PackedScene" uid="uid://h3cctr7360oe" path="res://character.tscn" id="3_aqy51"]
+[ext_resource type="PackedScene" uid="uid://cl6d8en16keqa" path="res://respawn_point.tscn" id="4_s24i2"]
+[ext_resource type="Script" uid="uid://b3wta2fa0ogdo" path="res://path_follow_2d.gd" id="5_c8stx"]
+[ext_resource type="PackedScene" uid="uid://l3604jr0ryq6" path="res://hazard.tscn" id="6_aqy51"]
+[ext_resource type="PackedScene" uid="uid://dvuhe0bfw2pd1" path="res://sprite_hazard.tscn" id="6_s24i2"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_80qnk"]
+texture = ExtResource("1_l45re")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_cicwn"]
+tile_size = Vector2i(32, 32)
+sources/0 = SubResource("TileSetAtlasSource_80qnk")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lj1an"]
+size = Vector2(126, 58)
+
+[sub_resource type="QuadMesh" id="QuadMesh_rrs1j"]
+
+[sub_resource type="Curve2D" id="Curve2D_s24i2"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 2, -4, 0, 0, 0, 0, 28, -6, 0, 0, 0, 0, 29, -394, 0, 0, 0, 0, 2, -394, 0, 0, 0, 0, 2, -4)
+}
+point_count = 5
+
+[node name="level_4" type="Node2D" unique_id=42749587]
+
+[node name="TilemapHolder" type="Node2D" parent="." unique_id=2099826557]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="TilemapHolder" unique_id=792151766]
+tile_map_data = PackedByteArray("AAAFABYAAAAAAAAAAAAGABYAAAAAAAAAAAAHABYAAAAAAAAAAAAIABYAAAAAAAAAAAAJABYAAAAAAAAAAAAKABYAAAAAAAAAAAALABYAAAAAAAAAAAAMABYAAAAAAAAAAAANABYAAAAAAAAAAAAOABYAAAAAAAAAAAAPABYAAAAAAAAAAAAQABYAAAAAAAAAAAARABYAAAAAAAAAAAASABYAAAAAAAAAAAATABYAAAAAAAAAAAAUABYAAAAAAAAAAAAVABYAAAAAAAAAAAAVABcAAAAAAAAAAAAUABcAAAAAAAAAAAATABcAAAAAAAAAAAASABcAAAAAAAAAAAARABcAAAAAAAAAAAAQABcAAAAAAAAAAAAPABcAAAAAAAAAAAAOABcAAAAAAAAAAAANABcAAAAAAAAAAAAMABcAAAAAAAAAAAALABcAAAAAAAAAAAAKABcAAAAAAAAAAAAJABcAAAAAAAAAAAAIABcAAAAAAAAAAAAHABcAAAAAAAAAAAAGABcAAAAAAAAAAAAFABcAAAAAAAAAAAAZABYAAAAAAAAAAAAaABYAAAAAAAAAAAAbABYAAAAAAAAAAAAcABYAAAAAAAAAAAAdABYAAAAAAAAAAAAeABYAAAAAAAAAAAAfABYAAAAAAAAAAAAgABYAAAAAAAAAAAAhABYAAAAAAAAAAAAiABYAAAAAAAAAAAAjABYAAAAAAAAAAAAjABcAAAAAAAAAAAAiABcAAAAAAAAAAAAhABcAAAAAAAAAAAAgABcAAAAAAAAAAAAfABcAAAAAAAAAAAAeABcAAAAAAAAAAAAdABcAAAAAAAAAAAAcABcAAAAAAAAAAAAbABcAAAAAAAAAAAAaABcAAAAAAAAAAAAZABcAAAAAAAAAAAAWABcAAAAAAAAAAAAXABcAAAAAAAAAAAAYABcAAAAAAAAAAAAYABYAAAAAAAAAAAAXABYAAAAAAAAAAAAWABYAAAAAAAAAAAAkABYAAAAAAAAAAAAkABcAAAAAAAAAAAAlABcAAAAAAAAAAAAmABcAAAAAAAAAAAAmABYAAAAAAAAAAAAlABYAAAAAAAAAAAAnABYAAAAAAAAAAAAnABcAAAAAAAAAAAAoABcAAAAAAAAAAAAoABYAAAAAAAAAAAApABYAAAAAAAAAAAApABcAAAAAAAAAAAAqABcAAAAAAAAAAAAqABYAAAAAAAAAAAAEABYAAAAAAAAAAAADABYAAAAAAAAAAAACABYAAAAAAAAAAAABABYAAAAAAAAAAAAAABYAAAAAAAAAAAAAABcAAAAAAAAAAAD//xcAAAAAAAAAAAD//xYAAAAAAAAAAAABABcAAAAAAAAAAAACABcAAAAAAAAAAAADABcAAAAAAAAAAAAEABcAAAAAAAAAAAD+/xYAAAAAAAAAAAD+/xcAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_cicwn")
+
+[node name="Platform" type="StaticBody2D" parent="." unique_id=28285643]
+position = Vector2(63, 669)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform" unique_id=372849227]
+shape = SubResource("RectangleShape2D_lj1an")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Platform" unique_id=1649520074]
+scale = Vector2(126.50002, 59.000004)
+mesh = SubResource("QuadMesh_rrs1j")
+
+[node name="Platform2" type="StaticBody2D" parent="." unique_id=1788622292]
+position = Vector2(241, 597)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform2" unique_id=618105786]
+shape = SubResource("RectangleShape2D_lj1an")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Platform2" unique_id=991069833]
+scale = Vector2(126.50002, 59.000004)
+mesh = SubResource("QuadMesh_rrs1j")
+
+[node name="Platform3" type="StaticBody2D" parent="." unique_id=2142750497]
+position = Vector2(416, 505)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform3" unique_id=1274312909]
+shape = SubResource("RectangleShape2D_lj1an")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Platform3" unique_id=585843905]
+scale = Vector2(126.50002, 59.000004)
+mesh = SubResource("QuadMesh_rrs1j")
+
+[node name="Platform4" type="StaticBody2D" parent="." unique_id=1746642547]
+position = Vector2(985, 505)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform4" unique_id=2028041769]
+shape = SubResource("RectangleShape2D_lj1an")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Platform4" unique_id=1149428980]
+scale = Vector2(126.50002, 59.000004)
+mesh = SubResource("QuadMesh_rrs1j")
+
+[node name="Platform5" type="StaticBody2D" parent="." unique_id=993307496]
+position = Vector2(1165, 447)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform5" unique_id=664490117]
+shape = SubResource("RectangleShape2D_lj1an")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Platform5" unique_id=903428178]
+scale = Vector2(126.50002, 59.000004)
+mesh = SubResource("QuadMesh_rrs1j")
+
+[node name="Character" parent="." unique_id=2006792599 instance=ExtResource("3_aqy51")]
+position = Vector2(57, 603)
+
+[node name="RespawnPoint" parent="." unique_id=1839479743 instance=ExtResource("4_s24i2")]
+position = Vector2(64, 626)
+
+[node name="LatchPoint" parent="." unique_id=2051732560 instance=ExtResource("2_c8stx")]
+position = Vector2(569, 404)
+
+[node name="LatchPointPath" type="Path2D" parent="." unique_id=1673006063]
+position = Vector2(688, 598)
+curve = SubResource("Curve2D_s24i2")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="LatchPointPath" unique_id=2103890546]
+position = Vector2(2, -4)
+rotates = false
+script = ExtResource("5_c8stx")
+
+[node name="SpriteHazard" parent="LatchPointPath/PathFollow2D" unique_id=1941922915 instance=ExtResource("6_s24i2")]
+
+[node name="LatchPoint2" parent="." unique_id=123532640 instance=ExtResource("2_c8stx")]
+position = Vector2(815, 441)
+
+[node name="Hazard" parent="." unique_id=1552841070 instance=ExtResource("6_aqy51")]
+position = Vector2(-665, 791)
+
+[connection signal="body_entered" from="Hazard" to="Hazard" method="_on_body_entered"]
