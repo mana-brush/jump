@@ -53,22 +53,16 @@ mesh = SubResource("QuadMesh_fmu3g")
 position = Vector2(309, 648)
 
 [node name="LatchPoint2" parent="." unique_id=1021382983 instance=ExtResource("2_16pka")]
-position = Vector2(457, 601)
+position = Vector2(457, 525)
 
 [node name="LatchPoint3" parent="." unique_id=401087796 instance=ExtResource("2_16pka")]
-position = Vector2(457, 469)
+position = Vector2(616, 415)
 
 [node name="LatchPoint4" parent="." unique_id=140015936 instance=ExtResource("2_16pka")]
-position = Vector2(457, 341)
+position = Vector2(761, 299)
 
 [node name="LatchPoint5" parent="." unique_id=2054457425 instance=ExtResource("2_16pka")]
-position = Vector2(759, 607)
-
-[node name="LatchPoint6" parent="." unique_id=484907359 instance=ExtResource("2_16pka")]
-position = Vector2(759, 469)
-
-[node name="LatchPoint7" parent="." unique_id=1947524740 instance=ExtResource("2_16pka")]
-position = Vector2(995, 607)
+position = Vector2(915, 171)
 
 [node name="Character" parent="." unique_id=2006792599 instance=ExtResource("3_j8bo8")]
 position = Vector2(57, 603)

@@ -95,10 +95,10 @@ script = ExtResource("2_0s5r2")
 position = Vector2(94, 625)
 
 [node name="LatchPoint" parent="." unique_id=2051732560 instance=ExtResource("2_xdadj")]
-position = Vector2(365, 648)
+position = Vector2(365, 552)
 
 [node name="LatchPoint2" parent="." unique_id=1756505225 instance=ExtResource("2_xdadj")]
-position = Vector2(548, 648)
+position = Vector2(548, 552)
 
 [node name="RespawnPoint" parent="." unique_id=1839479743 instance=ExtResource("3_1y8me")]
 position = Vector2(98, 648)

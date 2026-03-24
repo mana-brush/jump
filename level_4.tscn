@@ -153,6 +153,7 @@ curve = SubResource("Curve2D_s24i2")
 position = Vector2(2, -4)
 rotates = false
 script = ExtResource("5_c8stx")
+can_rotate = true
 
 [node name="SpriteHazard" parent="LatchPointPath/PathFollow2D" unique_id=1941922915 instance=ExtResource("6_s24i2")]
 
@@ -165,6 +166,7 @@ curve = SubResource("Curve2D_s24i2")
 position = Vector2(2, -4)
 rotates = false
 script = ExtResource("5_c8stx")
+can_rotate = true
 
 [node name="SpriteHazard" parent="LatchPointPath2/PathFollow2D" unique_id=1704015559 instance=ExtResource("6_s24i2")]
 

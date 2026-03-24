@@ -17,7 +17,7 @@ tile_size = Vector2i(32, 32)
 sources/4 = SubResource("TileSetAtlasSource_5hph3")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0xm2m"]
-size = Vector2(532, 58)
+size = Vector2(660, 58)
 
 [sub_resource type="QuadMesh" id="QuadMesh_lquwl"]
 
@@ -36,17 +36,19 @@ tile_set = SubResource("TileSet_gyffv")
 position = Vector2(268, 691)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LeftPlatform" unique_id=1032668638]
+position = Vector2(64, 0)
 shape = SubResource("RectangleShape2D_0xm2m")
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="LeftPlatform" unique_id=855984010]
-scale = Vector2(535, 59.000004)
+position = Vector2(62.24999, 0)
+scale = Vector2(659.5, 59.000004)
 mesh = SubResource("QuadMesh_lquwl")
 
 [node name="Character" parent="." unique_id=2006792599 instance=ExtResource("1_hbghi")]
 position = Vector2(269, 622)
 
 [node name="LatchPoint" parent="." unique_id=2051732560 instance=ExtResource("2_hn12h")]
-position = Vector2(729, 648)
+position = Vector2(729, 525)
 
 [node name="RightPlatform" type="StaticBody2D" parent="." unique_id=1110180670]
 position = Vector2(1107, 691)

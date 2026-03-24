@@ -34,8 +34,6 @@ func _physics_process(delta):
 				latch_to_point(delta)
 		State.LATCHING:
 			handle_latching(delta)
-		State.HANGING:
-			handle_hanging()
 
 
 # -------------------------
@@ -65,21 +63,17 @@ func latch_to_point(delta):
 	latch_target_position = current_latch_point.get_node("SnapPoint").global_position
 	
 func handle_latching(delta):
+	
+	if not current_latch_point:
+		return
+	
+	latch_target_position = current_latch_point.get_node("SnapPoint").global_position
+	
 	# Smooth movement toward target
 	global_position = global_position.lerp(
 		latch_target_position,
 		LATCH_SPEED * delta
 	)
-
-	# Check if close enough
-	if global_position.distance_to(latch_target_position) < 2.0:
-		global_position = latch_target_position
-		state = State.HANGING
-
-# -------------------------
-# 🪜 HANGING
-# -------------------------
-func handle_hanging():
 
 	velocity = Vector2.ZERO
 
@@ -92,6 +86,7 @@ func handle_hanging():
 	elif Input.is_action_just_pressed("move_down"):
 		state = State.NORMAL
 		velocity.y = 100
+
 
 func set_latch_point(point):
 	current_latch_point = point

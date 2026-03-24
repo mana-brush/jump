@@ -1,30 +1,29 @@
 [gd_scene format=3 uid="uid://b6dib8pagbtbc"]
 
 [ext_resource type="Script" uid="uid://c885el58cc51a" path="res://latch_point.gd" id="1_oihre"]
+[ext_resource type="Texture2D" uid="uid://dm5p1jcrqoi2v" path="res://art/hook.png" id="2_11hob"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xrk45"]
 size = Vector2(49, 20)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_oihre"]
-size = Vector2(66, 26)
+[sub_resource type="CircleShape2D" id="CircleShape2D_11hob"]
+radius = 65.85
 
 [node name="LatchPoint" type="Area2D" unique_id=2051732560]
 script = ExtResource("1_oihre")
-
-[node name="Platform" type="Polygon2D" parent="." unique_id=1457259600]
-position = Vector2(0.28571415, 0)
-scale = Vector2(0.57142854, 1)
-polygon = PackedVector2Array(24, 0, 24, -20, -25, -20, -25, 0)
 
 [node name="LatchPointPlatform" type="CollisionShape2D" parent="." unique_id=1151265034]
 position = Vector2(-0.5, -10)
 shape = SubResource("RectangleShape2D_xrk45")
 
 [node name="SnapPoint" type="Marker2D" parent="." unique_id=1380502896]
-position = Vector2(0, -26)
 
 [node name="LatchArea" type="Area2D" parent="." unique_id=1100093621]
 
 [node name="LatchAreaCollision" type="CollisionShape2D" parent="LatchArea" unique_id=216580533]
 position = Vector2(-1, -13)
-shape = SubResource("RectangleShape2D_oihre")
+shape = SubResource("CircleShape2D_11hob")
+
+[node name="HookSprite" type="Sprite2D" parent="." unique_id=1607078787]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_11hob")
