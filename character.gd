@@ -10,8 +10,7 @@ var latch_target_position: Vector2
 
 enum State {
 	NORMAL,
-	LATCHING,
-	HANGING
+	LATCHING
 }
 
 var state = State.NORMAL
@@ -67,13 +66,14 @@ func handle_latching(delta):
 	if not current_latch_point:
 		return
 	
-	latch_target_position = current_latch_point.get_node("SnapPoint").global_position
-	
-	# Smooth movement toward target
-	global_position = global_position.lerp(
-		latch_target_position,
-		LATCH_SPEED * delta
-	)
+	# check if still close or if latch is moving
+	if global_position.distance_to(latch_target_position) > 2.0:
+		latch_target_position = current_latch_point.get_node("SnapPoint").global_position
+		# Smooth movement toward target
+		global_position = global_position.lerp(
+			latch_target_position,
+			LATCH_SPEED * delta
+		)
 
 	velocity = Vector2.ZERO
 
