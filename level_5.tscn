@@ -1,0 +1,76 @@
+[gd_scene format=4 uid="uid://7vrggovewaf2"]
+
+[ext_resource type="Texture2D" uid="uid://qgaerulc7t1v" path="res://art/highlight-lines.png" id="1_qhsfq"]
+[ext_resource type="PackedScene" uid="uid://h3cctr7360oe" path="res://character.tscn" id="1_t3h5c"]
+[ext_resource type="PackedScene" uid="uid://l3604jr0ryq6" path="res://hazard.tscn" id="2_cp4ax"]
+[ext_resource type="PackedScene" uid="uid://cl6d8en16keqa" path="res://respawn_point.tscn" id="3_br4so"]
+[ext_resource type="PackedScene" uid="uid://24pfwjueyof6" path="res://platform.tscn" id="4_br4so"]
+[ext_resource type="PackedScene" uid="uid://bgahbc07id787" path="res://hazard_path.tscn" id="5_8ons7"]
+[ext_resource type="PackedScene" uid="uid://b6dib8pagbtbc" path="res://latch_point.tscn" id="6_tac4s"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kcwpe"]
+texture = ExtResource("1_qhsfq")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_j6qfn"]
+tile_size = Vector2i(32, 32)
+sources/0 = SubResource("TileSetAtlasSource_kcwpe")
+
+[node name="level_5" type="Node2D" unique_id=245687611]
+
+[node name="TilemapHolder" type="Node2D" parent="." unique_id=74042087]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="TilemapHolder" unique_id=1173228822]
+tile_map_data = PackedByteArray("AAAFABYAAAAAAAAAAAAGABYAAAAAAAAAAAAHABYAAAAAAAAAAAAIABYAAAAAAAAAAAAJABYAAAAAAAAAAAAKABYAAAAAAAAAAAALABYAAAAAAAAAAAAMABYAAAAAAAAAAAANABYAAAAAAAAAAAAOABYAAAAAAAAAAAAPABYAAAAAAAAAAAAQABYAAAAAAAAAAAARABYAAAAAAAAAAAASABYAAAAAAAAAAAATABYAAAAAAAAAAAAUABYAAAAAAAAAAAAVABYAAAAAAAAAAAAVABcAAAAAAAAAAAAUABcAAAAAAAAAAAATABcAAAAAAAAAAAASABcAAAAAAAAAAAARABcAAAAAAAAAAAAQABcAAAAAAAAAAAAPABcAAAAAAAAAAAAOABcAAAAAAAAAAAANABcAAAAAAAAAAAAMABcAAAAAAAAAAAALABcAAAAAAAAAAAAKABcAAAAAAAAAAAAJABcAAAAAAAAAAAAIABcAAAAAAAAAAAAHABcAAAAAAAAAAAAGABcAAAAAAAAAAAAFABcAAAAAAAAAAAAZABYAAAAAAAAAAAAaABYAAAAAAAAAAAAbABYAAAAAAAAAAAAcABYAAAAAAAAAAAAdABYAAAAAAAAAAAAeABYAAAAAAAAAAAAfABYAAAAAAAAAAAAgABYAAAAAAAAAAAAhABYAAAAAAAAAAAAiABYAAAAAAAAAAAAjABYAAAAAAAAAAAAjABcAAAAAAAAAAAAiABcAAAAAAAAAAAAhABcAAAAAAAAAAAAgABcAAAAAAAAAAAAfABcAAAAAAAAAAAAeABcAAAAAAAAAAAAdABcAAAAAAAAAAAAcABcAAAAAAAAAAAAbABcAAAAAAAAAAAAaABcAAAAAAAAAAAAZABcAAAAAAAAAAAAWABcAAAAAAAAAAAAXABcAAAAAAAAAAAAYABcAAAAAAAAAAAAYABYAAAAAAAAAAAAXABYAAAAAAAAAAAAWABYAAAAAAAAAAAAkABYAAAAAAAAAAAAkABcAAAAAAAAAAAAlABcAAAAAAAAAAAAmABcAAAAAAAAAAAAmABYAAAAAAAAAAAAlABYAAAAAAAAAAAAnABYAAAAAAAAAAAAnABcAAAAAAAAAAAAoABcAAAAAAAAAAAAoABYAAAAAAAAAAAApABYAAAAAAAAAAAApABcAAAAAAAAAAAAqABcAAAAAAAAAAAAqABYAAAAAAAAAAAAEABYAAAAAAAAAAAADABYAAAAAAAAAAAACABYAAAAAAAAAAAABABYAAAAAAAAAAAAAABYAAAAAAAAAAAAAABcAAAAAAAAAAAD//xcAAAAAAAAAAAD//xYAAAAAAAAAAAABABcAAAAAAAAAAAACABcAAAAAAAAAAAADABcAAAAAAAAAAAAEABcAAAAAAAAAAAD+/xYAAAAAAAAAAAD+/xcAAAAAAAAAAAADABIAAAABAAAAAAACABIAAAABAAAAAAACABEAAAABAAAAAAACABAAAAABAAAAAAADABAAAAABAAAAAAADAA8AAAABAAAAAAAEABAAAAABAAAAAAAEABEAAAABAAAAAAADABEAAAABAAAAAAAEAA8AAAABAAAAAAACAA8AAAABAAAAAAA=")
+tile_set = SubResource("TileSet_j6qfn")
+
+[node name="Character" parent="." unique_id=2006792599 instance=ExtResource("1_t3h5c")]
+position = Vector2(1181, 125)
+
+[node name="Hazard" parent="." unique_id=1941922915 instance=ExtResource("2_cp4ax")]
+position = Vector2(-661, 803)
+
+[node name="RespawnPoint" parent="." unique_id=1839479743 instance=ExtResource("3_br4so")]
+position = Vector2(1185, 122)
+
+[node name="Platform" parent="." unique_id=1545677585 instance=ExtResource("4_br4so")]
+position = Vector2(1181, 267)
+
+[node name="Platform2" parent="." unique_id=434152141 instance=ExtResource("4_br4so")]
+position = Vector2(786, 581)
+
+[node name="Platform3" parent="." unique_id=314036503 instance=ExtResource("4_br4so")]
+position = Vector2(274, 316)
+
+[node name="Platform4" parent="." unique_id=1446295394 instance=ExtResource("4_br4so")]
+position = Vector2(274, 316)
+
+[node name="Platform5" parent="." unique_id=1681003224 instance=ExtResource("4_br4so")]
+position = Vector2(110, 604)
+
+[node name="LatchPointPath" parent="." unique_id=352420085 instance=ExtResource("5_8ons7")]
+position = Vector2(780, 586)
+
+[node name="LatchPointPath2" parent="." unique_id=2049810714 instance=ExtResource("5_8ons7")]
+position = Vector2(785, 188)
+rotation = 1.5707964
+
+[node name="LatchPointPath3" parent="." unique_id=2101893647 instance=ExtResource("5_8ons7")]
+position = Vector2(47, 228)
+rotation = 1.5707964
+
+[node name="LatchPoint" parent="." unique_id=2051732560 instance=ExtResource("6_tac4s")]
+position = Vector2(960, 372)
+
+[node name="LatchPoint2" parent="." unique_id=874629902 instance=ExtResource("6_tac4s")]
+position = Vector2(549, 497)
+
+[node name="LatchPoint3" parent="." unique_id=104279632 instance=ExtResource("6_tac4s")]
+position = Vector2(432, 372)
+
+[node name="LatchPoint4" parent="." unique_id=105606720 instance=ExtResource("6_tac4s")]
+position = Vector2(430, 230)
+
+[connection signal="body_entered" from="Hazard" to="Hazard" method="_on_body_entered"]

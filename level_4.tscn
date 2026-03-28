@@ -2,9 +2,11 @@
 
 [ext_resource type="Texture2D" uid="uid://qgaerulc7t1v" path="res://art/highlight-lines.png" id="1_l45re"]
 [ext_resource type="PackedScene" uid="uid://b6dib8pagbtbc" path="res://latch_point.tscn" id="2_c8stx"]
+[ext_resource type="PackedScene" uid="uid://24pfwjueyof6" path="res://platform.tscn" id="2_s24i2"]
 [ext_resource type="PackedScene" uid="uid://h3cctr7360oe" path="res://character.tscn" id="3_aqy51"]
 [ext_resource type="PackedScene" uid="uid://cl6d8en16keqa" path="res://respawn_point.tscn" id="4_s24i2"]
 [ext_resource type="Script" uid="uid://b3wta2fa0ogdo" path="res://path_follow_2d.gd" id="5_c8stx"]
+[ext_resource type="PackedScene" uid="uid://bgahbc07id787" path="res://hazard_path.tscn" id="6_66w8i"]
 [ext_resource type="PackedScene" uid="uid://l3604jr0ryq6" path="res://hazard.tscn" id="6_aqy51"]
 [ext_resource type="PackedScene" uid="uid://dvuhe0bfw2pd1" path="res://sprite_hazard.tscn" id="6_s24i2"]
 
@@ -30,6 +32,7 @@ _data = {
 point_count = 5
 
 [node name="level_4" type="Node2D" unique_id=42749587]
+position = Vector2(1, 0)
 
 [node name="TilemapHolder" type="Node2D" parent="." unique_id=2099826557]
 
@@ -37,15 +40,8 @@ point_count = 5
 tile_map_data = PackedByteArray("AAAFABYAAAAAAAAAAAAGABYAAAAAAAAAAAAHABYAAAAAAAAAAAAIABYAAAAAAAAAAAAJABYAAAAAAAAAAAAKABYAAAAAAAAAAAALABYAAAAAAAAAAAAMABYAAAAAAAAAAAANABYAAAAAAAAAAAAOABYAAAAAAAAAAAAPABYAAAAAAAAAAAAQABYAAAAAAAAAAAARABYAAAAAAAAAAAASABYAAAAAAAAAAAATABYAAAAAAAAAAAAUABYAAAAAAAAAAAAVABYAAAAAAAAAAAAVABcAAAAAAAAAAAAUABcAAAAAAAAAAAATABcAAAAAAAAAAAASABcAAAAAAAAAAAARABcAAAAAAAAAAAAQABcAAAAAAAAAAAAPABcAAAAAAAAAAAAOABcAAAAAAAAAAAANABcAAAAAAAAAAAAMABcAAAAAAAAAAAALABcAAAAAAAAAAAAKABcAAAAAAAAAAAAJABcAAAAAAAAAAAAIABcAAAAAAAAAAAAHABcAAAAAAAAAAAAGABcAAAAAAAAAAAAFABcAAAAAAAAAAAAZABYAAAAAAAAAAAAaABYAAAAAAAAAAAAbABYAAAAAAAAAAAAcABYAAAAAAAAAAAAdABYAAAAAAAAAAAAeABYAAAAAAAAAAAAfABYAAAAAAAAAAAAgABYAAAAAAAAAAAAhABYAAAAAAAAAAAAiABYAAAAAAAAAAAAjABYAAAAAAAAAAAAjABcAAAAAAAAAAAAiABcAAAAAAAAAAAAhABcAAAAAAAAAAAAgABcAAAAAAAAAAAAfABcAAAAAAAAAAAAeABcAAAAAAAAAAAAdABcAAAAAAAAAAAAcABcAAAAAAAAAAAAbABcAAAAAAAAAAAAaABcAAAAAAAAAAAAZABcAAAAAAAAAAAAWABcAAAAAAAAAAAAXABcAAAAAAAAAAAAYABcAAAAAAAAAAAAYABYAAAAAAAAAAAAXABYAAAAAAAAAAAAWABYAAAAAAAAAAAAkABYAAAAAAAAAAAAkABcAAAAAAAAAAAAlABcAAAAAAAAAAAAmABcAAAAAAAAAAAAmABYAAAAAAAAAAAAlABYAAAAAAAAAAAAnABYAAAAAAAAAAAAnABcAAAAAAAAAAAAoABcAAAAAAAAAAAAoABYAAAAAAAAAAAApABYAAAAAAAAAAAApABcAAAAAAAAAAAAqABcAAAAAAAAAAAAqABYAAAAAAAAAAAAEABYAAAAAAAAAAAADABYAAAAAAAAAAAACABYAAAAAAAAAAAABABYAAAAAAAAAAAAAABYAAAAAAAAAAAAAABcAAAAAAAAAAAD//xcAAAAAAAAAAAD//xYAAAAAAAAAAAABABcAAAAAAAAAAAACABcAAAAAAAAAAAADABcAAAAAAAAAAAAEABcAAAAAAAAAAAD+/xYAAAAAAAAAAAD+/xcAAAAAAAAAAAABAAUAAAABAAAAAAABAAQAAAABAAAAAAABAAMAAAABAAAAAAABAAIAAAABAAAAAAACAAIAAAABAAAAAAACAAMAAAABAAAAAAACAAQAAAABAAAAAAACAAUAAAABAAAAAAA=")
 tile_set = SubResource("TileSet_cicwn")
 
-[node name="Platform" type="StaticBody2D" parent="." unique_id=28285643]
+[node name="Platform" parent="." unique_id=1545677585 instance=ExtResource("2_s24i2")]
 position = Vector2(63, 669)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform" unique_id=372849227]
-shape = SubResource("RectangleShape2D_lj1an")
-
-[node name="MeshInstance2D" type="MeshInstance2D" parent="Platform" unique_id=1649520074]
-scale = Vector2(126.50002, 59.000004)
-mesh = SubResource("QuadMesh_rrs1j")
 
 [node name="Platform2" type="StaticBody2D" parent="." unique_id=1788622292]
 position = Vector2(260, 580)
@@ -145,17 +141,8 @@ position = Vector2(299, 166)
 [node name="LatchPoint" parent="." unique_id=2051732560 instance=ExtResource("2_c8stx")]
 position = Vector2(579, 362)
 
-[node name="LatchPointPath" type="Path2D" parent="." unique_id=1673006063]
+[node name="LatchPointPath" parent="." unique_id=352420085 instance=ExtResource("6_66w8i")]
 position = Vector2(688, 598)
-curve = SubResource("Curve2D_s24i2")
-
-[node name="PathFollow2D" type="PathFollow2D" parent="LatchPointPath" unique_id=2103890546]
-position = Vector2(2, -4)
-rotates = false
-script = ExtResource("5_c8stx")
-can_rotate = true
-
-[node name="SpriteHazard" parent="LatchPointPath/PathFollow2D" unique_id=1941922915 instance=ExtResource("6_s24i2")]
 
 [node name="LatchPointPath2" type="Path2D" parent="." unique_id=1908629158]
 position = Vector2(508, 59)

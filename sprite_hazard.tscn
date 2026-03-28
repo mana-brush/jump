@@ -3,14 +3,14 @@
 [ext_resource type="Script" uid="uid://ca2eokgmtei2g" path="res://sprite_hazard.gd" id="1_wsa5k"]
 [ext_resource type="Texture2D" uid="uid://brilfjw68wdcy" path="res://art/spike.png" id="2_wsa5k"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8xpx0"]
-size = Vector2(63, 66)
+[sub_resource type="CircleShape2D" id="CircleShape2D_wsa5k"]
+radius = 28.62
 
 [node name="SpriteHazard" type="Area2D" unique_id=1941922915]
 script = ExtResource("1_wsa5k")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2026063151]
-shape = SubResource("RectangleShape2D_8xpx0")
+shape = SubResource("CircleShape2D_wsa5k")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1959648058]
 texture = ExtResource("2_wsa5k")

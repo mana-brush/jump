@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bgahbc07id787"]
+
+[ext_resource type="Script" uid="uid://b3wta2fa0ogdo" path="res://path_follow_2d.gd" id="1_ocea6"]
+[ext_resource type="PackedScene" uid="uid://dvuhe0bfw2pd1" path="res://sprite_hazard.tscn" id="2_vfew2"]
+
+[sub_resource type="Curve2D" id="Curve2D_s24i2"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 2, -4, 0, 0, 0, 0, 28, -6, 0, 0, 0, 0, 29, -394, 0, 0, 0, 0, 2, -394, 0, 0, 0, 0, 5, -73, 0, 0, 0, 0, -1, -39, 0, 0, 0, 0, 16, 10, 0, 0, 0, 0, 2, -4)
+}
+point_count = 8
+
+[node name="LatchPointPath" type="Path2D" unique_id=352420085]
+curve = SubResource("Curve2D_s24i2")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="." unique_id=1857733259]
+position = Vector2(2, -4)
+rotates = false
+script = ExtResource("1_ocea6")
+can_rotate = true
+
+[node name="SpriteHazard" parent="PathFollow2D" unique_id=1941922915 instance=ExtResource("2_vfew2")]
